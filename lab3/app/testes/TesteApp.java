@@ -15,11 +15,14 @@ public class TesteApp {
         
         @Before        
         public void inicializa(){
-                guia = new GuiaDeCurso(); //CREATOR: Porque GuiaDeCurso é responsável por armazenar os períodos
+                guia = new GuiaDeCurso(); 
         }
 
         @Test
         public void deveTerPrimeiroPeriodo(){
+        	
+        	    
+        	
                 Periodo primeiroPeriodo = guia.getPeriodo(1);
                 assertNotNull(primeiroPeriodo);
                 assertNotNull(primeiroPeriodo.getDisciplinas());
