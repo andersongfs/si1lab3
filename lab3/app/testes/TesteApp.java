@@ -26,7 +26,8 @@ public class TesteApp {
                 primeiroPeriodo = new Periodo();
         }
 
-        @Test
+        @SuppressWarnings("deprecation")
+		@Test
         public void deveTerPrimeiroPeriodo(){
         	
         	    Disciplina calc1 = new Disciplina("calculo 1", null, 4);
@@ -45,10 +46,15 @@ public class TesteApp {
         	    
         	    Assert.assertEquals(24, primeiroPeriodo.getTotalCreditos());
         	    
+        	    
+        	    
         	    //acho que antes do guia retornar algum periodo, este periodo deve ter sido criado e adicionado ao guia
                 //Periodo primeiroPeriodo = guia.getPeriodo(1);
+        	    
+        	    guia.addPeriodo(primeiroPeriodo);
                 assertNotNull(primeiroPeriodo);
                 assertNotNull(primeiroPeriodo.getDisciplinas());
+                assertNotNull(guia.getPeriodo(1));
                 
             
         }

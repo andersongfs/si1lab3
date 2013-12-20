@@ -1,4 +1,5 @@
 package controllers;
+import java.util.ArrayList;
 import java.util.List;
 
 import play.mvc.Controller;
@@ -13,10 +14,23 @@ public class GuiaDeCurso extends Controller {
 	
 	
 	
+	public GuiaDeCurso() {
+		periodos = new ArrayList<Periodo>();
+	}
+
+
+
 
 	public Periodo getPeriodo(int periodo) {
 		return periodos.get(periodo - 1);
 		
+	}
+
+
+
+
+	public void addPeriodo(Periodo primeiroPeriodo) {
+		periodos.add(primeiroPeriodo);
 	}
 	
 	
