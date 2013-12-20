@@ -7,6 +7,9 @@ public class Periodo {
 	private List<Disciplina> disciplinas;
 	
 	//CREATOR: a classe disciplina cria uma lista de objetos disciplina
+	//Periodo precisa de disciplina para ser criado.
+	//Perido agrega disciplina
+	
 	
 	public Periodo(){
 		disciplinas = new ArrayList<Disciplina>();
