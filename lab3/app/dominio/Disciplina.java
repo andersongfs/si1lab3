@@ -15,4 +15,8 @@ public class Disciplina {
 		this.creditos = creditos;
 	}
 
+	public int getCredito() {
+		return this.creditos;
+	}
+
 }
