@@ -3,6 +3,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import play.mvc.Controller;
+import play.mvc.Result;
+import views.html.index;
 
 import dominio.*;
 
@@ -13,12 +15,9 @@ public class GuiaDeCurso extends Controller {
 	
 	
 	
-	
 	public GuiaDeCurso() {
 		periodos = new ArrayList<Periodo>();
 	}
-
-
 
 
 	public Periodo getPeriodo(int periodo) {
@@ -27,6 +26,11 @@ public class GuiaDeCurso extends Controller {
 	}
 
 
+
+
+	public List<Periodo> getPeriodos() {
+		return periodos;
+	}
 
 
 	public void addPeriodo(Periodo primeiroPeriodo) {

@@ -2,12 +2,7 @@ package testes;
 
 import static org.junit.Assert.*;
 
-import play.mvc.*;
-import play.test.*;
-import play.libs.F.*;
 
-import static play.test.Helpers.*;
-import static org.fest.assertions.Assertions.*;
 
 import org.junit.Assert;
 import org.junit.Before;
