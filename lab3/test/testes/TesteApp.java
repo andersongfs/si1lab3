@@ -4,13 +4,14 @@ import static org.junit.Assert.*;
 
 
 
+import models.Disciplina;
+import models.GuiaDeCurso;
+import models.Periodo;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import controllers.GuiaDeCurso;
-import dominio.Disciplina;
-import dominio.Periodo;
 
 public class TesteApp {
         private GuiaDeCurso guia;
