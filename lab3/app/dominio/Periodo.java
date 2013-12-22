@@ -11,6 +11,8 @@ public class Periodo {
 	//Perido agrega disciplina
 	
 	
+	
+	
 	public Periodo(){
 		disciplinas = new ArrayList<Disciplina>();
 	}
