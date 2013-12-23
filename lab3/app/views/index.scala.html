@@ -34,9 +34,9 @@
 		<nome-principal>Meu Curso</nome-principal>
 	</div>
 	<br/>	
-	<div id="colunas">
+	<div id="colunas" >
 		@for(periodo <- periodos){
-			<div id="c1" class="coluna">
+			<div id="c1" class="coluna" style="height: 130%;">
 			@for(disciplina <- periodo.getDisciplinas()){
 				<div class="disciplina">
 					<nome>@disciplina.getNome()</nome><br/>
@@ -70,7 +70,7 @@
                                                 <option value="7">7</option>
                                                 <option value="8">8</option>
                                 </select>
-                                        <input name="nomeCadeira" type="hidden" value="@disciplina.getNome()">
+                                        <input name="nomeDisciplina" type="hidden" value="@disciplina.getNome()">
                                         <button type="submit" class="btn btn-success btn xs">
                                                  Adicionar
                                         </button>

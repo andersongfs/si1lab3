@@ -13,13 +13,13 @@ public class Grade {
 	public Grade() {
 		
 		
-		Disciplina calcI = new Disciplina("calculo 1", new ArrayList<Disciplina>(), 4);
-		Disciplina vetorial = new Disciplina("vetorial", new ArrayList<Disciplina>(), 4);
+		Disciplina calcI = new Disciplina("Cálculo I", new ArrayList<Disciplina>(), 4);
+		Disciplina vetorial = new Disciplina("Vetorial", new ArrayList<Disciplina>(), 4);
 		Disciplina lpt = new Disciplina("Leitura e producao de textos", new ArrayList<Disciplina>(), 4);
 		Disciplina p1 = new Disciplina("Programação I", new ArrayList<Disciplina>(), 4);
 		Disciplina ic = new Disciplina("Introdução à Computação", new ArrayList<Disciplina>(), 4);
 		Disciplina lp1 = new Disciplina("Laboratório de Programação I", new ArrayList<Disciplina>(), 4);
-		Disciplina calcII = new Disciplina("calculo II", new ArrayList<Disciplina>(), 4);
+		Disciplina calcII = new Disciplina("Cálculo II", new ArrayList<Disciplina>(), 4);
 		calcII.addPreRequisito(calcI);
 		Disciplina discreta = new Disciplina("Matemática Discreta", new ArrayList<Disciplina>(), 4);
 		Disciplina metodologia = new Disciplina("Metodologia Científica", new ArrayList<Disciplina>(), 4);

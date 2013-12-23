@@ -43,20 +43,13 @@ public class GuiaDeCurso extends Controller {
 
 	public void criaPrimeiroPeriodo(){
 		Periodo primeiroPeriodo = new Periodo();
-		
-		Disciplina calc1 = new Disciplina("calculo 1", null, 4);
-	    Disciplina vetorial = new Disciplina("vetorial", null, 4);
-	    Disciplina lpt = new Disciplina("lpt", null, 4);
-	    Disciplina prog1 = new Disciplina("prog1", null, 4);
-	    Disciplina labProg1 = new Disciplina("labprog1", null, 4);
-	    Disciplina IntroComp = new Disciplina("IntroComp", null, 4);
-	    
-	    primeiroPeriodo.addDisciplina(calc1);
-	    primeiroPeriodo.addDisciplina(vetorial);
-	    primeiroPeriodo.addDisciplina(lpt);
-	    primeiroPeriodo.addDisciplina(prog1);
-	    primeiroPeriodo.addDisciplina(labProg1);
-	    primeiroPeriodo.addDisciplina(IntroComp);
+			    
+	    primeiroPeriodo.addDisciplina(grade.getDisciplina("Cálculo I"));
+	    primeiroPeriodo.addDisciplina(grade.getDisciplina("Vetorial"));
+	    primeiroPeriodo.addDisciplina(grade.getDisciplina("Programação I"));
+	    primeiroPeriodo.addDisciplina(grade.getDisciplina("Laboratório de Programação I"));
+	    primeiroPeriodo.addDisciplina(grade.getDisciplina("Introdução à Computação"));
+	    primeiroPeriodo.addDisciplina(grade.getDisciplina("Leitura e producao de textos"));
 	    
 	    periodos.add(primeiroPeriodo);
 		
