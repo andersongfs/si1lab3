@@ -5,13 +5,7 @@
 
 @main("Meu curso") {
 
-<script>
-function funcaoAdicionar(nome){
-	var periodo = prompt("Deseja adicionar em qual periodo", 2);
-	Application.meuCurso.addDisciplina(nome,periodo);
-	alert("Hello World!" + nome);
-}
-</script>
+
 
 <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav"
 	role="banner">
@@ -61,46 +55,30 @@ function funcaoAdicionar(nome){
         <div id="grade">
            @for(disciplina <- grade){
                <div class="disciplina float-left">
+                
+                    <form id="addCadeira" method="POST" action="@routes.Application.addDisciplina()">
                     <nome>@disciplina.getNome()</nome><br/>
                     <descricao>@disciplina.getCreditos() creditos</descricao>
-                    <button onclick="funcaoAdicionar('@disciplina.getNome()')">adicionar</button>
+                    <br>
+                    <label><small>Período:&nbsp;</small></label><select name="periodo">
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                </select>
+                                        <input name="nomeCadeira" type="hidden" value="@disciplina.getNome()">
+                                        <button type="submit" class="btn btn-success btn xs">
+                                                 Adicionar
+                                        </button>
+                                </form>
+
                </div>
          }
          </div>
-	<div id="disciplinas">
-		<div class="disciplina float-left">
-			<nome>Disciplina 7</nome><br/>
-			<descricao>20 creditos</descricao>
-		</div>
-		<div class="disciplina float-left">
-			<nome>Disciplina 8</nome><br/>
-			<descricao>1 credito</descricao>
-		</div>
-				<div class="disciplina float-left">
-			<nome>Disciplina 9</nome><br/>
-			<descricao>20 creditos</descricao>
-		</div>
-		<div class="disciplina float-left">
-			<nome>Disciplina 10</nome><br/>
-			<descricao>1 credito</descricao>
-		</div>
-				<div class="disciplina float-left">
-			<nome>Disciplina 11</nome><br/>
-			<descricao>20 creditos</descricao>
-		</div>
-		<div class="disciplina float-left">
-			<nome>Disciplina 12</nome><br/>
-			<descricao>1 credito</descricao>
-		</div>
-				<div class="disciplina float-left">
-			<nome>Disciplina 13</nome><br/>
-			<descricao>20 creditos</descricao>
-		</div>
-		<div class="disciplina float-left">
-			<nome>Disciplina 14</nome><br/>
-			<descricao>1 credito</descricao>
-		</div>	
-	</div>
 </div>
 
 

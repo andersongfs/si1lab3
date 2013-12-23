@@ -22,13 +22,6 @@ public class GuiaDeCurso extends Controller {
 		periodos = new ArrayList<Periodo>();
 		criaPrimeiroPeriodo();criaDemaisPeriodos();	
 		
-		//-------------APENAS PARA MOSTRAR QUE TA ADICIONANDO ----------------
-		Disciplina calc2 = this.getGrade().getDisciplina("calculo II");
-    	this.addDisciplina(calc2, 2);
-    	Disciplina ffm = this.getGrade().getDisciplina("Fundamentos de Física Moderna");
-    	this.addDisciplina(ffm, 2);
-    	//--------------------------------------------------------------------
-		
 	}
 
 
