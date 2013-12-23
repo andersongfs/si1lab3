@@ -38,5 +38,14 @@ public class TesteApp {
         	assertNotNull(guia.getPeriodo(2));
         	assertTrue(guia.getPeriodo(2).contemDisciplina(calc2));
         }
+        
+        @Test
+        public void testeDePreRequisitos(){
+            
+        	Assert.assertNotNull(guia.getGrade());
+        	
+        	
+        	
+        }
 
 }

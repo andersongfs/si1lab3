@@ -23,6 +23,9 @@ public class Disciplina {
 		return nome;
 	}
 	
+	public void addPreRequisito(Disciplina requisito){
+		preRequisitos.add(requisito);
+	}
 	
 	/**
 	 * Método para comparar umam disciplina com outra
