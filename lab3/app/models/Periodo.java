@@ -36,5 +36,20 @@ public class Periodo {
 		
 		return totalCreditos;
 	}
+	
+	/**
+	 * Método para informar se o período contém certa disciplina
+	 * @param Disciplina a qual quer consultar se está contida
+	 * @return true caso contém a disciplina
+	 * 			false caso contrário
+	 */
+	public boolean contemDisciplina(Disciplina disc){
+		for (int i = 0; i < disciplinas.size(); i++) {
+			if(disciplinas.get(i).equals(disc)){
+				return true;
+			}
+		}
+		return false;
+	}
 
 }

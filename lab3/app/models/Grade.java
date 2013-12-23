@@ -74,6 +74,14 @@ public class Grade {
 		return grade;
 	}
 	
+	public Disciplina getDisciplina(String nome){
+		for(int i = 0; i < grade.size(); i++){
+			if(grade.get(i).getNome().equals(nome)){
+				return grade.get(i);
+			}
+		}
+		return null;
+	}
 	
 	
 }

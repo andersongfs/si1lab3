@@ -2,7 +2,6 @@ package controllers;
 
 import java.util.List;
 
-import models.GuiaDeCurso;
 import models.Periodo;
 
 

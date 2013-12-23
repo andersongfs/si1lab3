@@ -11,7 +11,7 @@ public class Disciplina {
 	
 	public Disciplina(String cadeira, List<Disciplina> preRequisitos, int creditos){
 		this.nome = cadeira;
-		this.preRequisitos = preRequisitos;
+		this.setPreRequisitos(preRequisitos);
 		this.creditos = creditos;
 	}
 
@@ -21,6 +21,27 @@ public class Disciplina {
 
 	public String getNome() {
 		return nome;
+	}
+	
+	
+	/**
+	 * Método para comparar umam disciplina com outra
+	 * @param Disciplina a qual será comparada
+	 * @return true se forem iguais, false caso contrário
+	 */
+	public boolean equals(Disciplina disc){
+		if(this.getNome().equals(disc.getNome())){
+			return true;
+		}
+		return false;
+	}
+
+	public List<Disciplina> getPreRequisitos() {
+		return preRequisitos;
+	}
+
+	public void setPreRequisitos(List<Disciplina> preRequisitos) {
+		this.preRequisitos = preRequisitos;
 	}
 	
 	
