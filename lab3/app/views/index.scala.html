@@ -1,8 +1,17 @@
 @(periodos: List[Periodo], grade: List[Disciplina])
 
 @import helper._ 
+@import controllers._
 
 @main("Meu curso") {
+
+<script>
+function funcaoAdicionar(nome){
+	var periodo = prompt("Deseja adicionar em qual periodo", 2);
+	Application.meuCurso.addDisciplina(nome,periodo);
+	alert("Hello World!" + nome);
+}
+</script>
 
 <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav"
 	role="banner">
@@ -54,6 +63,7 @@
                <div class="disciplina float-left">
                     <nome>@disciplina.getNome()</nome><br/>
                     <descricao>@disciplina.getCreditos() creditos</descricao>
+                    <button onclick="funcaoAdicionar('@disciplina.getNome()')">adicionar</button>
                </div>
          }
          </div>
@@ -92,4 +102,7 @@
 		</div>	
 	</div>
 </div>
+
+
+
 }
