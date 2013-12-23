@@ -6,7 +6,7 @@ import java.util.List;
 public class Grade {
 
 	
-	//a grade eh o Expert em saber qual eh a grade do curso e prover para outras classes
+	//a grade eh o Creator
 	
 	private List<Disciplina> grade = new ArrayList<Disciplina>();
 	
@@ -81,6 +81,61 @@ public class Grade {
 		loac.addPreRequisito(eda);
 		loac.addPreRequisito(leda);
 		Disciplina infosoc = new Disciplina("Informática e Sociedade", new ArrayList<Disciplina>(), 2);
+		Disciplina atal = new Disciplina("Análise e Técnicas de Algoritmos", new ArrayList<Disciplina>(), 4);
+		atal.addPreRequisito(eda);
+		atal.addPreRequisito(leda);
+		atal.addPreRequisito(calcII);
+		atal.addPreRequisito(logica);
+		Disciplina compiladores = new Disciplina("Compiladores", new ArrayList<Disciplina>(), 4);
+		compiladores.addPreRequisito(oac);
+		compiladores.addPreRequisito(loac);
+		compiladores.addPreRequisito(plp);
+		Disciplina redes = new Disciplina("Redes de Computadores", new ArrayList<Disciplina>(), 4);
+		redes.addPreRequisito(oac);
+		redes.addPreRequisito(loac);
+		Disciplina bd1 = new Disciplina("Bancos de Dados I", new ArrayList<Disciplina>(), 4);
+		bd1.addPreRequisito(siI);
+		Disciplina si2 = new Disciplina("Sistemas de Informação II", new ArrayList<Disciplina>(), 4);
+		si2.addPreRequisito(siI);
+		Disciplina les = new Disciplina("Laboratório de Engenharia de Software", new ArrayList<Disciplina>(), 2);
+		les.addPreRequisito(es);
+		Disciplina direito = new Disciplina("Direito e Cidadania", new ArrayList<Disciplina>(), 4);
+		Disciplina so = new Disciplina("Sistemas Operacionais", new ArrayList<Disciplina>(), 4);
+		so.addPreRequisito(oac);
+		so.addPreRequisito(loac);
+		Disciplina irc = new Disciplina("Interconexão de Redes de Computadores", new ArrayList<Disciplina>(), 2);
+		irc.addPreRequisito(redes);
+		Disciplina bd2 = new Disciplina("Banco de Dados II", new ArrayList<Disciplina>(), 4);
+		bd2.addPreRequisito(bd1);
+		bd2.addPreRequisito(si2);
+		Disciplina ia1 = new Disciplina("Inteligência Artificial I", new ArrayList<Disciplina>(), 4);
+		ia1.addPreRequisito(atal);
+		ia1.addPreRequisito(plp);
+		ia1.addPreRequisito(metodos);
+		Disciplina lirc = new Disciplina("Laboratório de Interconexão de Redes de Computadores", new ArrayList<Disciplina>(), 2);
+		lirc.addPreRequisito(redes);
+		Disciplina optativa1 = new Disciplina("Optativa 1", new ArrayList<Disciplina>(), 4);
+		Disciplina optativa2 = new Disciplina("Optativa 2", new ArrayList<Disciplina>(), 4);
+		Disciplina msn = new Disciplina("Métodos e Software Numéricos", new ArrayList<Disciplina>(), 4);
+		msn.addPreRequisito(atal);
+		msn.addPreRequisito(linear);
+		Disciplina adsd = new Disciplina("Avaliação de Desempenho de Sistemas Discretos", new ArrayList<Disciplina>(), 4);
+		adsd.addPreRequisito(prob);
+		Disciplina proj1 = new Disciplina("Projeto em Computação I", new ArrayList<Disciplina>(), 4);
+		proj1.addPreRequisito(les);
+		proj1.addPreRequisito(metodologia);
+		Disciplina optativa3 = new Disciplina("Optativa 3", new ArrayList<Disciplina>(), 4);
+		Disciplina optativa4 = new Disciplina("Optativa 4", new ArrayList<Disciplina>(), 4);
+		Disciplina optativa5 = new Disciplina("Optativa 5", new ArrayList<Disciplina>(), 4);
+		Disciplina optativa6 = new Disciplina("Optativa 6", new ArrayList<Disciplina>(), 4);
+		Disciplina proj2 = new Disciplina("Projeto em Computação II", new ArrayList<Disciplina>(), 6);
+		proj2.addPreRequisito(proj1);
+		Disciplina optativa7 = new Disciplina("Optativa 7", new ArrayList<Disciplina>(), 4);
+		Disciplina optativa8 = new Disciplina("Optativa 8", new ArrayList<Disciplina>(), 4);
+		Disciplina optativa9 = new Disciplina("Optativa 9", new ArrayList<Disciplina>(), 4);
+		Disciplina optativa10 = new Disciplina("Optativa 10", new ArrayList<Disciplina>(), 4);
+		Disciplina optativa11 = new Disciplina("Optativa 11", new ArrayList<Disciplina>(), 2);
+		
 		
 		
 		grade.add(calcI);
@@ -111,34 +166,33 @@ public class Grade {
 		grade.add(siI);
 		grade.add(loac);
 		grade.add(infosoc);
-		grade.add(new Disciplina("Análise e Técnicas de Algoritmos", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Compiladores", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Redes de Computadores", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Bancos de Dados I", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Sistemas de Informação II", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Laboratório de Engenharia de Software", new ArrayList<Disciplina>(), 2));
-		grade.add(new Disciplina("Direito e Cidadania", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Sistemas Operacionais", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Interconexão de Redes de Computadores", new ArrayList<Disciplina>(), 2));
-		grade.add(new Disciplina("Banco de Dados II", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Inteligência Artificial I", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Laboratório de Interconexão de Redes de Computadores", new ArrayList<Disciplina>(), 2));
-		grade.add(new Disciplina("Inteligência Artificial I", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Optativa 1", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Optativa 2", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Métodos e Software Numéricos", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Avaliação de Desempenho de Sistemas Discretos", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Projeto em Computação I", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Optativa 3", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Optativa 4", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Optativa 5", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Optativa 6", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Projeto em Computação II", new ArrayList<Disciplina>(), 6));
-		grade.add(new Disciplina("Optativa 7", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Optativa 8", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Optativa 9", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Optativa 10", new ArrayList<Disciplina>(), 4));
-		grade.add(new Disciplina("Optativa 11", new ArrayList<Disciplina>(), 2));	
+		grade.add(atal);
+		grade.add(compiladores);
+		grade.add(redes);
+		grade.add(bd1);
+		grade.add(si2);
+		grade.add(les);
+		grade.add(direito);
+		grade.add(so);
+		grade.add(irc);
+		grade.add(bd2);
+		grade.add(ia1);
+		grade.add(lirc);
+		grade.add(optativa1);
+		grade.add(optativa2);
+		grade.add(msn);
+		grade.add(adsd);
+		grade.add(proj1);
+		grade.add(optativa3);
+		grade.add(optativa4);
+		grade.add(optativa5);
+		grade.add(optativa6);
+		grade.add(proj2);
+		grade.add(optativa7);
+		grade.add(optativa8);
+		grade.add(optativa9);
+		grade.add(optativa10);
+		grade.add(optativa11);	
 	}
 
 	public List<Disciplina> listaGrade() {
