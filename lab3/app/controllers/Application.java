@@ -35,6 +35,7 @@ public class Application extends Controller {
         final String nome = form.get("nomeDisciplina");
         final int periodo = Integer.parseInt(form.get("periodo"));
         
+        
         meuCurso.addDisciplina(nome, periodo);
     	
     	return index();

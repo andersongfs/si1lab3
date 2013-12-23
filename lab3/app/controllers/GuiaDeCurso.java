@@ -64,6 +64,8 @@ public class GuiaDeCurso extends Controller {
 		Periodo sextoPeriodo = new Periodo();
 		Periodo setimoPeriodo = new Periodo();
 		Periodo oitavoPeriodo = new Periodo();
+		Periodo nonoPeriodo = new Periodo();
+		Periodo decimoPeriodo = new Periodo();
 		
 		this.addPeriodo(segundoPeriodo);
 		this.addPeriodo(terceiroPeriodo);
@@ -72,6 +74,8 @@ public class GuiaDeCurso extends Controller {
 		this.addPeriodo(sextoPeriodo);
 		this.addPeriodo(setimoPeriodo);
 		this.addPeriodo(oitavoPeriodo);
+		this.addPeriodo(nonoPeriodo);
+		this.addPeriodo(decimoPeriodo);
 		
 	}
 
