@@ -83,7 +83,7 @@ public class GuiaDeCurso extends Controller {
 
 	public void addDisciplina(Disciplina disc, int periodo) {
 		if(checaPreRequisitos(disc, periodo)){
-			if(this.getPeriodo(periodo).getTotalCreditos() <= NUM_MAX_DE_CREDITOS){
+			if(this.getPeriodo(periodo).getTotalCreditos() + disc.getCreditos() <= NUM_MAX_DE_CREDITOS){
 				this.getPeriodo(periodo).addDisciplina(disc);
 			}
 		}
