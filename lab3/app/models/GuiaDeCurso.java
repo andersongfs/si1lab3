@@ -8,13 +8,15 @@ import play.mvc.Controller;
 public class GuiaDeCurso extends Controller {
 	
 	//CREATOR: Porque GuiaDeCurso é responsável por armazenar os períodos
+	           //Cria tb a grade, que eh utilizada para apresentar ao usuario as cadeiras que o curso oferece
 	private List<Periodo> periodos;
-	
+	private Grade grade; 
 	
 	
 	
 // o construtor do Guia de curso ja iniciliza com o primeiro periodo preenchido
 	public GuiaDeCurso() {
+		grade = new Grade();
 		periodos = new ArrayList<Periodo>();
 		criaPrimeiroPeriodo();
 	}
@@ -24,10 +26,6 @@ public class GuiaDeCurso extends Controller {
 		return periodos.get(periodo - 1);
 		
 	}
-
-
-
-
 	public List<Periodo> getPeriodos() {
 		return periodos;
 	}
@@ -56,5 +54,13 @@ public class GuiaDeCurso extends Controller {
 	    periodos.add(primeiroPeriodo);
 		
 	}
+
+
+	public Grade getGrade() {
+		return grade;
+	}
+
+	
+	
 
 }

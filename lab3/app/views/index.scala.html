@@ -1,4 +1,4 @@
-@(periodos: List[Periodo])
+@(periodos: List[Periodo], grade: List[Disciplina])
 
 @import helper._ 
 
@@ -55,6 +55,15 @@
 			<nome-principal>Disciplinas Ofertadas</nome-principal>
 	</div>
 	<br/>	
+
+        <div id="grade">
+           @for(disciplina <- grade){
+               <div class="disciplina float-left">
+                    <nome>@disciplina.getNome()</nome><br/>
+                    <descricao>@disciplina.getCreditos() creditos</descricao>
+               </div>
+         }
+         </div>
 	<div id="disciplinas">
 		<div class="disciplina float-left">
 			<nome>Disciplina 7</nome><br/>
