@@ -6,7 +6,7 @@ import java.util.List;
 public class Grade {
 
 	
-	//a grade eh o Creator
+	//A grade eh o Creator
 	
 	private List<Disciplina> grade = new ArrayList<Disciplina>();
 	

@@ -12,20 +12,33 @@ public class Periodo {
 	
 	
 	
-	
+	/**
+	 * Construtor da classe Periodo
+	 */
 	public Periodo(){
 		disciplinas = new ArrayList<Disciplina>();
 	}
-
-	public List<Disciplina> getDisciplinas() {
-		
+	
+	/**
+	 * Método de acesso as disciplinas do período
+	 * @return Uma List contendo as disciplinas alocadas no período
+	 */
+	public List<Disciplina> getDisciplinas() {		
 		return disciplinas;
 	}
 	
+	/**
+	 * Método para adicionar uma disciplina ao período
+	 * @param disciplina a ser adicionada
+	 */
 	public void addDisciplina(Disciplina disc){
 		disciplinas.add(disc);
 	}
-
+	
+	/**
+	 * Método para consultar o total de créditos do período
+	 * @return Um total de créditos do tipo int
+	 */
 	public int getTotalCreditos() {
 		
 		int totalCreditos = 0;
@@ -47,6 +60,20 @@ public class Periodo {
 			if(disciplinas.get(i).equals(disc)){
 				return true;
 			}
+		}
+		return false;
+	}
+	
+	/**
+	 * Método para remover disciplinas de um período do curso
+	 * @param disciplina a ser removida
+	 * @return true caso seja removida
+	 * 			false caso não seja removida
+	 */
+	public boolean removeDisciplina(Disciplina disc){
+		if(this.contemDisciplina(disc)){
+			disciplinas.remove(disc);
+			return true;
 		}
 		return false;
 	}

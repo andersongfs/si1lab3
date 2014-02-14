@@ -110,8 +110,26 @@ public class GuiaDeCurso extends Controller {
 		return true;	
 
 	}
-
-
+	
+	public void removeDisciplina(Disciplina disc, int periodo){
+		Periodo periodoDaDisciplina = this.getPeriodo(periodo);
+		periodoDaDisciplina.removeDisciplina(disc);
+		
+		removeDependentes(disc, periodo);
+		
+		
+	}
+	
+	public void removeDependentes(Disciplina disc, int periodo){
+		
+		for(int per = periodo; per < this.periodos.size(); per++){
+			for(int j = 0; j < this.getPeriodo(per).getDisciplinas().size(); j++){
+				if(this.getPeriodo(per).getDisciplinas().get(j).getPreRequisitos().contains(disc)){
+					this.removeDisciplina(this.getPeriodo(per).getDisciplinas().get(j), per);
+				}
+			}
+		}
+	}
 
 	
 	
