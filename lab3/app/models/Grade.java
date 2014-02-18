@@ -3,16 +3,24 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Grade {
 
+/**
+ * Classe que representa a Grade do curso
+ */
+public class Grade {
 	
 	//A grade eh o Creator
 	
 	private List<Disciplina> grade = new ArrayList<Disciplina>();
 	
+	/**
+	 * Construtor da classe Grade
+	 */
 	public Grade() {
 		
-		
+		// Criando as disciplinas, 
+		// adicionando ao primeiro periodo as do primeiro periodo
+		// adicinando pre-requisitos
 		Disciplina calcI = new Disciplina("Cálculo I", new ArrayList<Disciplina>(), 4);
 		Disciplina vetorial = new Disciplina("Vetorial", new ArrayList<Disciplina>(), 4);
 		Disciplina lpt = new Disciplina("Leitura e producao de textos", new ArrayList<Disciplina>(), 4);
@@ -135,7 +143,7 @@ public class Grade {
 		Disciplina optativa9 = new Disciplina("Optativa 9", new ArrayList<Disciplina>(), 4);
 		Disciplina optativa10 = new Disciplina("Optativa 10", new ArrayList<Disciplina>(), 4);
 		Disciplina optativa11 = new Disciplina("Optativa 11", new ArrayList<Disciplina>(), 2);
-		
+		//
 		
 		
 		grade.add(calcI);
@@ -195,10 +203,19 @@ public class Grade {
 		grade.add(optativa11);	
 	}
 
+	/**
+	 * Método de acesso as disciplinas da Grade
+	 * @return Uma List contendo as disciplinas alocadas na Grade
+	 */
 	public List<Disciplina> listaGrade() {
 		return grade;
 	}
 	
+	/**
+	 * Método que acessa uma disciplina na Grade, pelo nome da disciplina.
+	 * @param nome da Disciplina se ela existir.
+	 * @return a disciplina. Retorna null se não encontrar a disciplina
+	 */
 	public Disciplina getDisciplina(String nome){
 		for(int i = 0; i < grade.size(); i++){
 			if(grade.get(i).getNome().equals(nome)){
@@ -207,6 +224,4 @@ public class Grade {
 		}
 		return null;
 	}
-	
-	
 }

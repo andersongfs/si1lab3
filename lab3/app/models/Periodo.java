@@ -3,7 +3,9 @@ package models;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * Classe que representa um Periodo no plano de curso
+ */
 public class Periodo {
 	private List<Disciplina> disciplinas;
 	//CREATOR: a classe disciplina cria uma lista de objetos disciplina
