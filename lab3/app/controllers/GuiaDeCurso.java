@@ -5,7 +5,9 @@ import java.util.List;
 import models.*;
 import play.mvc.Controller;
 
-
+/**
+ * Essa classe representa o plano de curso criado pelo usuário
+ */
 public class GuiaDeCurso extends Controller {
 	
 	//CREATOR: Porque GuiaDeCurso é responsável por armazenar os períodos
@@ -24,15 +26,23 @@ public class GuiaDeCurso extends Controller {
 		
 	}
 
-
+	/**
+	 * Retorna a grade de disciplinas, ou seja, todas as disciplinas disponiveis.
+	 * @return a grade
+	 */
 	public Grade getGrade() {
 		return grade;
 	}
 
+	/**
+	 * Método que acessa um período específico
+	 * @param periodo O número do período
+	 * @return O periodo
+	 */
 	public Periodo getPeriodo(int periodo) {
-		return periodos.get(periodo - 1);
-		
+		return periodos.get(periodo - 1);	
 	}
+	
 	public List<Periodo> getPeriodos() {
 		return periodos;
 	}
@@ -54,7 +64,6 @@ public class GuiaDeCurso extends Controller {
 	    periodos.add(primeiroPeriodo);
 		
 	}
-
 
 	private void criaDemaisPeriodos() {
 		Periodo segundoPeriodo = new Periodo();
@@ -79,21 +88,36 @@ public class GuiaDeCurso extends Controller {
 		
 	}
 
+	/**
+	 * Adiciona uma disciplina a partir do nome
+	 * @param nomeDisc Nome da disciplina
+	 * @param periodo O periodo onde a disciplina será adicionada
+	 */
 	public void addDisciplina(String nomeDisc, int periodo) {
 		Disciplina disc = grade.getDisciplina(nomeDisc);
 		addDisciplina(disc, periodo);
 		
 	}
 
+	/**
+	 * Adiciona uma disciplina
+	 * @param nomeDisc A disciplina
+	 * @param periodo O periodo onde a disciplina será adicionada
+	 */
 	public void addDisciplina(Disciplina disc, int periodo) {
 		if(checaPreRequisitos(disc, periodo)){
 			if(this.getPeriodo(periodo).getTotalCreditos() + disc.getCreditos() <= NUM_MAX_DE_CREDITOS){
 				this.getPeriodo(periodo).addDisciplina(disc);
 			}
 		}
-		
 	}
 	
+	/**
+	 * Checa se os pre-requisitos da disciplina disc estão presentes nos periodos anteriores ao passado
+	 * @param disc A disciplina
+	 * @param periodo O periodo em que a disciplina está presente
+	 * @return true se ok
+	 */
 	public boolean checaPreRequisitos(Disciplina disc, int periodo){
 		boolean controle;
 		for (int i = 0; i < disc.getPreRequisitos().size(); i++) {
@@ -110,7 +134,12 @@ public class GuiaDeCurso extends Controller {
 		return true;	
 
 	}
-	
+
+	/**
+	 * Remove uma disciplina disc de um periodo
+	 * @param disc A disciplina a ser removida
+	 * @param periodo O periodo em que a disciplina estar
+	 */
 	public void removeDisciplina(Disciplina disc, int periodo){
 		Periodo periodoDaDisciplina = this.getPeriodo(periodo);
 		periodoDaDisciplina.removeDisciplina(disc);
@@ -120,6 +149,11 @@ public class GuiaDeCurso extends Controller {
 		
 	}
 	
+	/**
+	 * Remove as disciplinas dependentes da disciplina disc
+	 * @param disc A disciplina
+	 * @param periodo O periodo em que a disciplina se encontra
+	 */
 	public void removeDependentes(Disciplina disc, int periodo){
 		
 		for(int per = periodo; per < this.periodos.size(); per++){
@@ -130,8 +164,4 @@ public class GuiaDeCurso extends Controller {
 			}
 		}
 	}
-
-	
-	
-
 }
