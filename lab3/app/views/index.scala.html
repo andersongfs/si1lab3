@@ -14,21 +14,20 @@
 	<div id="colunas" >
 		@for(periodo <- periodos){
 			<div id="c1" class="coluna" style="height: 130%;">
-			@for(disciplina <- periodo.getDisciplinas()){
+			@for(disciplina <- periodo.getDisciplinas()){ 
 					<div class="disciplina">
+    		                       <form id="addDisciplina" method="POST" action="@routes.Application.addDisciplina()">
+
 					<nome>@disciplina.getNome()</nome><br/>
 					<descricao>@disciplina.getCreditos() creditos</descricao>
-                                        <form name="delete" id="delete" method="post" action="@routes.Application.removeDisciplina()">
-						<input type="hidden" name="nomeCadeira" id="nomeCadeira" value="@disciplina.getNome()"/>
-						<input type="hidden" name="periodo" id="periodo" value="@{periodos.indexOf(periodo)}"/>
+                                        
 						@if(periodos.indexOf(periodo)!= 0){
+							 <input name="nomeDisciplina" type="hidden" value="@disciplina.getNome()">
 							<button type="submit" class="btn btn-success btn xs">
                                                 		 Deletar
                                         		</button>
-		
-						}
-					</form>
-                                        
+                                               }
+                                        </form>
 				</div>
 			}
 			</div>
@@ -45,7 +44,7 @@
            @for(disciplina <- grade){
                <div class="disciplina float-left">
                 
-                    <form id="addCadeira" method="POST" action="@routes.Application.addDisciplina()">
+                    <form id="addDisciplina" method="POST" action="@routes.Application.addDisciplina()">
                     <nome>@disciplina.getNome()</nome><br/>
                     <descricao>@disciplina.getCreditos() creditos</descricao>
                     <br>
