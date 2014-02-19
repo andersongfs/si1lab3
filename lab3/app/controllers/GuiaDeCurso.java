@@ -34,6 +34,7 @@ public class GuiaDeCurso extends Controller {
 		return grade;
 	}
 
+
 	/**
 	 * Método que acessa um período específico
 	 * @param periodo O número do período
@@ -88,6 +89,8 @@ public class GuiaDeCurso extends Controller {
 		
 	}
 
+	
+	
 	/**
 	 * Adiciona uma disciplina a partir do nome
 	 * @param nomeDisc Nome da disciplina
@@ -134,7 +137,10 @@ public class GuiaDeCurso extends Controller {
 		return true;	
 
 	}
-
+	public void removeDisciplina(String nome, int periodo){
+		Disciplina disc = grade.getDisciplina(nome);
+		removeDependentes(disc, periodo);
+	}
 	/**
 	 * Remove uma disciplina disc de um periodo
 	 * @param disc A disciplina a ser removida

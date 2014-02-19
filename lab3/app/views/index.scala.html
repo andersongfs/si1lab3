@@ -15,15 +15,27 @@
 		@for(periodo <- periodos){
 			<div id="c1" class="coluna" style="height: 130%;">
 			@for(disciplina <- periodo.getDisciplinas()){
-				<div class="disciplina">
+					<div class="disciplina">
 					<nome>@disciplina.getNome()</nome><br/>
 					<descricao>@disciplina.getCreditos() creditos</descricao>
+                                        <form name="delete" id="delete" method="post" action="@routes.Application.removeDisciplina()">
+						<input type="hidden" name="nomeCadeira" id="nomeCadeira" value="@disciplina.getNome()"/>
+						<input type="hidden" name="periodo" id="periodo" value="@{periodos.indexOf(periodo)}"/>
+						@if(periodos.indexOf(periodo)!= 0){
+							<button type="submit" class="btn btn-success btn xs">
+                                                		 Deletar
+                                        		</button>
+		
+						}
+					</form>
+                                        
 				</div>
 			}
 			</div>
 		}
 
 	</div>
+
 	<div class="titulo">
 			<nome-principal>Disciplinas Ofertadas</nome-principal>
 	</div>

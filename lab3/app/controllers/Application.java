@@ -1,10 +1,6 @@
 package controllers;
 
-import java.util.List;
 
-import javax.servlet.FilterRegistration.Dynamic;
-
-import models.Periodo;
 
 
 import play.*;
@@ -40,6 +36,19 @@ public class Application extends Controller {
     	
     	return index();
     	
+    }
+    
+    public static Result removeDisciplina(){
+    	
+    	DynamicForm formDisciplina = new DynamicForm();
+    	final DynamicForm form = formDisciplina.bindFromRequest();
+        final String nome = form.get("nomeDisciplina");
+        final int periodo = Integer.parseInt(form.get("periodo"));
+        
+        
+        meuCurso.removeDisciplina(nome, periodo);
+    	
+    	return index();
     }
    
 }
