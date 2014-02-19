@@ -139,7 +139,7 @@ public class GuiaDeCurso extends Controller {
 	}
 	public void removeDisciplina(String nome, int periodo){
 		Disciplina disc = grade.getDisciplina(nome);
-		removeDependentes(disc, periodo);
+		removeDisciplina(disc, periodo);
 	}
 	/**
 	 * Remove uma disciplina disc de um periodo
