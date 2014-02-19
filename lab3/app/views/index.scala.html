@@ -23,6 +23,8 @@
                                         
 						@if(periodos.indexOf(periodo)!= 0){
 							 <input name="nomeDisciplina" type="hidden" value="@disciplina.getNome()">
+                                                         <input name="periodo" type="hidden" value="@periodos.indexOf(periodo)">
+
 							<button type="submit" class="btn btn-success btn xs">
                                                 		 Deletar
                                         		</button>
@@ -61,6 +63,7 @@
                                                 <option value="10">10</option>
                                 </select>
                                         <input name="nomeDisciplina" type="hidden" value="@disciplina.getNome()">
+                                        
                                         <button type="submit" class="btn btn-success btn xs">
                                                  Adicionar
                                         </button>
