@@ -16,7 +16,7 @@
 			<div id="c1" class="coluna" style="height: 130%;">
 			@for(disciplina <- periodo.getDisciplinas()){ 
 					<div class="disciplina">
-    		                       <form id="addDisciplina" method="POST" action="@routes.Application.addDisciplina()">
+    		                       <form id="removeDisciplina" method="POST" action="@routes.Application.removeDisciplina()">
 
 					<nome>@disciplina.getNome()</nome><br/>
 					<descricao>@disciplina.getCreditos() creditos</descricao>
